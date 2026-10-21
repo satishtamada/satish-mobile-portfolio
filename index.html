@@ -1,110 +1,352 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0b1020">
-  <meta name="description" content="Tamada Satish Kumar — Senior Mobile Developer specializing in Android, Kotlin, and Flutter.">
-  <title>Tamada Satish Kumar | Senior Mobile Developer</title>
-  <link rel="stylesheet" href="styles.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Satishkumar Tamada | Senior Android & Flutter Developer</title>
+<meta name="description" content="Senior Android and Flutter developer in Hyderabad with 10+ years of experience building production mobile apps in Kotlin, Jetpack Compose and Flutter.">
+<meta property="og:title" content="Satishkumar Tamada | Senior Android & Flutter Developer">
+<meta property="og:description" content="10+ years building production Android and Flutter apps.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F2F5F7;
+  --surface:#FFFFFF;
+  --ink:#10202B;
+  --muted:#51626F;
+  --line:#D5DDE3;
+  --blue:#2457F5;
+  --blue-soft:#E3EAFE;
+  --droid:#3DDC84;
+  --screen:#0E1A22;
+  --display:"Bricolage Grotesque",system-ui,sans-serif;
+  --body:"Hanken Grotesk",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#0B151C;
+    --surface:#111F29;
+    --ink:#E8EEF2;
+    --muted:#93A4B1;
+    --line:#223341;
+    --blue:#7C9BFF;
+    --blue-soft:#1A2A52;
+    --screen:#060D12;
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+/* header */
+header.site{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-family:var(--display);font-weight:800;text-decoration:none;font-size:18px}
+nav a{margin-left:22px;text-decoration:none;color:var(--muted);font-size:15px;font-weight:500}
+nav a:hover{color:var(--ink)}
+
+/* hero */
+.hero{padding:72px 0 88px}
+.hero .wrap{display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:center}
+.hero h1{font-family:var(--display);font-weight:800;font-size:clamp(44px,7vw,84px);line-height:.98;letter-spacing:-.03em;margin:0 0 24px}
+.hero p.lede{font-size:20px;max-width:34em;color:var(--muted);margin:0 0 32px}
+.hero p.lede strong{color:var(--ink);font-weight:600}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:12px 22px;border-radius:999px;font-weight:600;text-decoration:none;font-size:16px;border:2px solid var(--ink)}
+.btn.primary{background:var(--ink);color:var(--bg)}
+.btn.primary:hover{background:var(--blue);border-color:var(--blue);color:#fff}
+.btn.ghost:hover{background:var(--ink);color:var(--bg)}
+
+/* phone */
+.phone{justify-self:center;width:260px;border-radius:38px;padding:10px;background:var(--ink);box-shadow:0 30px 60px -30px rgba(16,32,43,.5)}
+.screen{background:var(--screen);border-radius:30px;height:470px;padding:18px 16px;color:#E8EEF2;display:flex;flex-direction:column;overflow:hidden}
+.statusbar{display:flex;justify-content:space-between;font-size:11px;opacity:.7;margin-bottom:14px}
+.screen h2{font-family:var(--display);font-size:13px;font-weight:700;margin:0 0 10px;color:var(--droid);letter-spacing:.02em}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+.chip{font:600 11px var(--body);padding:6px 10px;border-radius:999px;border:1px solid #2C4252;background:transparent;color:#C7D4DD;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--droid);border-color:var(--droid);color:#06231A}
+.card{background:#16262F;border-radius:18px;padding:16px;flex:1;display:flex;flex-direction:column}
+.card .k{font-size:11px;color:#8FA3B0;margin-bottom:2px}
+.card .t{font-family:var(--display);font-size:22px;font-weight:700;line-height:1.1;margin-bottom:10px}
+.card .d{font-size:13px;line-height:1.5;color:#C7D4DD;margin-bottom:auto}
+.card .s{font-size:11px;color:var(--droid);margin-top:12px}
+.hint{font-size:13px;color:var(--muted);text-align:center;margin-top:14px}
+
+/* sections */
+section{padding:72px 0;border-top:1px solid var(--line)}
+section h2.title{font-family:var(--display);font-weight:800;font-size:clamp(30px,4vw,44px);letter-spacing:-.02em;line-height:1.05;margin:0 0 36px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.about p{margin:0 0 16px;max-width:36em}
+.facts{list-style:none;padding:0;margin:0}
+.facts li{padding:14px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:16px}
+.facts li span:first-child{color:var(--muted)}
+.facts li span:last-child{font-weight:600;text-align:right}
+
+/* experience timeline */
+.timeline{list-style:none;margin:0;padding:0 0 0 22px;border-left:2px solid var(--line)}
+.timeline li{position:relative;padding:0 0 38px 26px}
+.timeline li:last-child{padding-bottom:0}
+.timeline li::before{content:"";position:absolute;left:-33px;top:9px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:3px solid var(--blue)}
+.timeline .when{font-size:14px;color:var(--muted);font-weight:500}
+.timeline h3{font-family:var(--display);font-size:22px;margin:2px 0 2px;line-height:1.2}
+.timeline .where{color:var(--blue);font-weight:600;margin-bottom:8px}
+.timeline p{margin:0;max-width:44em;color:var(--muted)}
+
+/* projects */
+.projects{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.projects li{display:grid;grid-template-columns:200px 1fr 220px;gap:24px;padding:26px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.projects h3{font-family:var(--display);font-size:22px;margin:0;line-height:1.2}
+.projects p{margin:0;color:var(--muted)}
+.projects .stack{font-size:14px;font-weight:600;color:var(--blue)}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:36px 40px}
+.skills h3{font-family:var(--display);font-size:18px;margin:0 0 10px}
+.skills ul{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:8px}
+.skills li{background:var(--blue-soft);color:var(--ink);padding:5px 12px;border-radius:8px;font-size:15px;font-weight:500}
+
+/* contact */
+.contact p{max-width:34em;color:var(--muted);font-size:19px;margin:0 0 28px}
+.links{display:flex;flex-wrap:wrap;gap:12px}
+footer{padding:32px 0 48px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+
+@media (max-width:860px){
+  .hero .wrap,.two{grid-template-columns:1fr}
+  .hero{padding:48px 0 56px}
+  .projects li{grid-template-columns:1fr;gap:6px}
+  .skills{grid-template-columns:1fr 1fr}
+  nav a{margin-left:14px}
+}
+@media (max-width:520px){
+  .skills{grid-template-columns:1fr}
+  nav a:nth-child(n+4){display:none}
+  .wrap{padding:0 18px}
+}
+</style>
 </head>
 <body>
-  <header class="site-header">
-    <a class="brand" href="#home" aria-label="Tamada Satish Kumar home"><span class="brand-mark">TS</span><span>Tamada Satish Kumar</span></a>
-    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
-    <nav id="nav">
-      <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#approach">How I work</a><a href="#contact">Contact</a>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="#top">Satishkumar Tamada</a>
+    <nav aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
     </nav>
-  </header>
+  </div>
+</header>
 
-  <main>
-    <section class="hero section" id="home">
-      <div class="hero-copy">
-        <p class="eyebrow"><span class="status-dot"></span> MOBILE ENGINEERING · ANDROID · FLUTTER</p>
-        <h1>Building reliable mobile experiences with <span class="gradient-text">thoughtful engineering.</span></h1>
-        <p class="hero-intro">I'm Tamada Satish Kumar, a mobile application developer with around 10 years of experience across Android and cross-platform development. I focus on maintainable architecture, production reliability, performance, and shipping useful features.</p>
-        <div class="actions">
-          <a class="button primary" href="#projects">Explore my work <span>↘</span></a>
-          <a class="button secondary" href="assets/Tamada-Satish-Kumar-Resume.pdf" download>Download resume <span>↓</span></a>
+<main id="top">
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <h1>I build Android and Flutter apps that ship.</h1>
+      <p class="lede">I'm Satishkumar, a senior mobile developer in Hyderabad with <strong>10+ years</strong> of Android experience across healthcare, e-commerce, live streaming and ride-hailing. I work in Kotlin, Jetpack Compose and Flutter.</p>
+      <div class="btns">
+        <a class="btn primary" href="#projects">See my work</a>
+        <a class="btn ghost" href="#contact">Get in touch</a>
+      </div>
+    </div>
+    <div>
+      <div class="phone" aria-label="Interactive phone showing selected projects">
+        <div class="screen">
+          <div class="statusbar"><span>9:41</span><span>5G</span></div>
+          <h2>Projects</h2>
+          <div class="chips" role="group" aria-label="Choose a project">
+            <button class="chip" aria-pressed="true" data-i="0">SainceTrade</button>
+            <button class="chip" aria-pressed="false" data-i="1">Doc-U-Scribe</button>
+            <button class="chip" aria-pressed="false" data-i="2">Weedeo</button>
+            <button class="chip" aria-pressed="false" data-i="3">Prydo</button>
+          </div>
+          <div class="card" aria-live="polite">
+            <div class="k" id="pk"></div>
+            <div class="t" id="pt"></div>
+            <div class="d" id="pd"></div>
+            <div class="s" id="ps"></div>
+          </div>
         </div>
-        <p class="small-note">Add your latest resume PDF to <code>assets/Tamada-Satish-Kumar-Resume.pdf</code> before publishing.</p>
       </div>
-      <div class="hero-card" aria-label="Technical focus">
-        <div class="card-top"><span class="window-dot red"></span><span class="window-dot yellow"></span><span class="window-dot green"></span><span class="card-label">MOBILE TOOLKIT</span></div>
-        <div class="code-line"><span class="code-purple">architecture</span><span>MVVM · MVI · Clean</span></div>
-        <div class="code-line"><span class="code-purple">android</span><span>Kotlin · Coroutines · Compose</span></div>
-        <div class="code-line"><span class="code-purple">crossPlatform</span><span>Flutter · Dart</span></div>
-        <div class="code-line"><span class="code-purple">quality</span><span>Testing · Crashlytics</span></div>
-        <div class="code-line"><span class="code-purple">delivery</span><span>CI/CD · Store releases</span></div>
-        <div class="terminal-footer"><span class="terminal-prompt">›</span> Build. Measure. Improve. <span class="blinking">▍</span></div>
-      </div>
-      <div class="hero-orb orb-one"></div><div class="hero-orb orb-two"></div>
-    </section>
+      <p class="hint">Tap a project</p>
+    </div>
+  </div>
+</div>
 
-    <section class="section intro-grid" id="about">
-      <div><p class="eyebrow">01 / ABOUT</p><h2>Mobile development from feature design to release.</h2></div>
-      <div class="section-copy">
-        <p>I work across native Android and cross-platform mobile development, partnering with product, design, and backend teams to turn requirements into maintainable applications.</p>
-        <p>My portfolio highlights representative engineering areas and case-study templates. Project descriptions should be finalized with verified details that can be shared publicly; no confidential employer code or user data belongs here.</p>
-        <div class="pills"><span>Feature delivery</span><span>API integration</span><span>Debugging</span><span>Release support</span></div>
+<section id="about">
+  <div class="wrap two">
+    <div>
+      <h2 class="title">About</h2>
+      <div class="about">
+        <p>I've spent over a decade turning product ideas into Android apps that people use every day: pharmacy ordering, clinical dictation, electronic medical records, live video and on-demand rides.</p>
+        <p>I care about clean architecture (MVVM, MVI, Clean), apps that are easy to test, and release pipelines that don't surprise anyone. I'm equally comfortable in native Kotlin with Jetpack Compose and in Flutter when one codebase makes more sense.</p>
       </div>
-    </section>
+    </div>
+    <div>
+      <ul class="facts" style="margin-top:8px">
+        <li><span>Role</span><span>Senior Android / Flutter Developer</span></li>
+        <li><span>Experience</span><span>10+ years</span></li>
+        <li><span>Location</span><span>Hyderabad, India</span></li>
+        <li><span>Education</span><span>MCA, Pydah College of Engineering and Technology</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-    <section class="section" id="skills">
-      <div class="section-heading"><div><p class="eyebrow">02 / TOOLBOX</p><h2>Technologies & practices</h2></div><p class="heading-note">Grouped by engineering work, not keyword volume.</p></div>
-      <div class="skills-grid">
-        <article class="skill-card"><div class="skill-icon">⌘</div><h3>Android</h3><p>Kotlin, Java, Android SDK, Jetpack components, Coroutines, Flow, StateFlow, Room, DataStore, Retrofit, OkHttp.</p></article>
-        <article class="skill-card"><div class="skill-icon">◈</div><h3>Cross-platform</h3><p>Flutter, Dart, state management, reusable widgets, platform integration, responsive UI, React Native familiarity.</p></article>
-        <article class="skill-card"><div class="skill-icon">▧</div><h3>Architecture</h3><p>MVVM, MVI, Clean Architecture, repository patterns, dependency injection, modular and testable design.</p></article>
-        <article class="skill-card"><div class="skill-icon">⌁</div><h3>Quality & observability</h3><p>Unit and UI testing, Firebase Crashlytics, logging, issue triage, regression prevention, performance investigation.</p></article>
-        <article class="skill-card"><div class="skill-icon">⇧</div><h3>Delivery & collaboration</h3><p>Git, pull requests, code reviews, GitHub Actions, build automation, app signing, release and store submission workflows.</p></article>
-        <article class="skill-card"><div class="skill-icon">⟡</div><h3>Networking & data</h3><p>REST and GraphQL integration, pagination, error handling, local persistence, loading states, and resilient API consumption.</p></article>
+<section id="experience">
+  <div class="wrap">
+    <h2 class="title">Experience</h2>
+    <ol class="timeline">
+      <li>
+        <div class="when">Jun 2021 – Aug 2026</div>
+        <h3>Senior Android / Flutter Developer</h3>
+        <div class="where">Saince Software</div>
+        <p>Built and maintained mobile apps in Flutter and native Android, including SainceTrade for pharmacy ordering and Doc-U-Scribe for clinical dictation using Jetpack Compose and MVI.</p>
+      </li>
+      <li>
+        <div class="when">Mar 2019 – Jun 2021</div>
+        <h3>Senior Android Developer</h3>
+        <div class="where">Byteridge Software</div>
+        <p>Developed Android applications for enterprise clients, including work on the Microsoft Blentnet project.</p>
+      </li>
+      <li>
+        <div class="when">Mar 2018 – Mar 2019</div>
+        <h3>Android Developer</h3>
+        <div class="where">LSN Software</div>
+        <p>Delivered Android apps for client projects.</p>
+      </li>
+      <li>
+        <div class="when">Feb 2016 – Mar 2018</div>
+        <h3>Android Developer</h3>
+        <div class="where">InventBird</div>
+        <p>Built Android apps from design through release.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <h2 class="title">Projects</h2>
+    <ul class="projects">
+      <li>
+        <h3>SainceTrade</h3>
+        <p>Pharmacy ordering app that lets pharmacies browse and place orders from their phone.</p>
+        <div class="stack">Flutter, Dart</div>
+      </li>
+      <li>
+        <h3>Doc-U-Scribe</h3>
+        <p>Clinical dictation app for recording and managing medical notes.</p>
+        <div class="stack">Kotlin, Jetpack Compose, MVI</div>
+      </li>
+      <li>
+        <h3>Qural</h3>
+        <p>Electronic medical records (EMR) app for accessing patient information.</p>
+        <div class="stack">Android, Kotlin</div>
+      </li>
+      <li>
+        <h3>Weedeo</h3>
+        <p>Live streaming app with real-time video.</p>
+        <div class="stack">Android, Agora, ExoPlayer</div>
+      </li>
+      <li>
+        <h3>Prydo</h3>
+        <p>Ride-hailing app with live maps and trip tracking.</p>
+        <div class="stack">Android, Google Maps</div>
+      </li>
+      <li>
+        <h3>U-ROCK</h3>
+        <p>Cross-platform app built from a single codebase for Android and iOS.</p>
+        <div class="stack">Flutter, Dart</div>
+      </li>
+      <li>
+        <h3>Smiley Serve</h3>
+        <p>E-commerce app with catalog, cart and online payments.</p>
+        <div class="stack">Android, payment gateways</div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <h2 class="title">Skills</h2>
+    <div class="skills">
+      <div>
+        <h3>Languages</h3>
+        <ul><li>Kotlin</li><li>Java</li><li>Dart</li></ul>
       </div>
-      <p class="small-note">Keep only technologies you can confidently discuss and demonstrate in an interview.</p>
-    </section>
-
-    <section class="section" id="projects">
-      <div class="section-heading"><div><p class="eyebrow">03 / SELECTED WORK</p><h2>Project case studies</h2></div><p class="heading-note">Representative areas based on your experience. Confirm public details before sharing.</p></div>
-      <div class="projects-grid">
-        <article class="project-card project-featured">
-          <div class="project-visual healthcare"><span class="visual-chip">HEALTHCARE</span><div class="phone-mock"><div class="phone-notch"></div><div class="mock-greeting">Good morning</div><div class="mock-title">Your care, connected.</div><div class="mock-line wide"></div><div class="mock-line"></div><div class="mock-panel"><span>Appointments</span><b>›</b></div><div class="mock-panel"><span>Health records</span><b>›</b></div></div></div>
-          <div class="project-body"><div class="project-meta"><span>Flutter · Android</span><span>Case study</span></div><h3>Healthcare mobile workflows</h3><p>Mobile workflows where clear user feedback, reliable API integration, and careful handling of sensitive information matter.</p><h4>Engineering topics</h4><ul><li>Feature architecture and state management</li><li>API loading, success, and error states</li><li>Crash investigation and regression testing</li></ul><p class="project-disclaimer">Use only approved, non-confidential descriptions. Replace this overview with your verified role and specific contribution.</p></div>
-        </article>
-        <article class="project-card">
-          <div class="project-visual documents"><span class="visual-chip">DOCUMENT WORKFLOW</span><div class="doc-sheet"><div class="doc-logo">DOC</div><div class="doc-heading"></div><div class="doc-line"></div><div class="doc-line short"></div><div class="doc-field"></div><div class="doc-field"></div><div class="doc-sign"></div></div></div>
-          <div class="project-body"><div class="project-meta"><span>Android · Kotlin</span><span>Case study</span></div><h3>Digital documentation</h3><p>A case-study area for form-driven workflows, local data, document generation, and robust handling of larger payloads.</p><h4>Engineering topics</h4><ul><li>Data modeling and persistence</li><li>Background work and responsiveness</li><li>Input validation and failure handling</li></ul><p class="project-disclaimer">Add verified implementation details and outcomes before publishing as a completed case study.</p></div>
-        </article>
-        <article class="project-card">
-          <div class="project-visual pipeline"><span class="visual-chip">ENGINEERING ENABLEMENT</span><div class="pipeline-flow"><div>Commit</div><i>↓</i><div>Lint + tests</div><i>↓</i><div>Build</div><i>↓</i><div>Distribute</div></div></div>
-          <div class="project-body"><div class="project-meta"><span>GitHub Actions</span><span>Demo opportunity</span></div><h3>Mobile CI/CD pipeline</h3><p>A public sample repository can demonstrate repeatable quality checks and build delivery without exposing employer infrastructure.</p><h4>Suggested deliverables</h4><ul><li>Lint and unit-test workflow</li><li>Build artifacts for review</li><li>Documented signing and release safeguards</li></ul><p class="project-disclaimer">This is a suggested portfolio demo, not a claim that a public pipeline already exists.</p></div>
-        </article>
+      <div>
+        <h3>UI</h3>
+        <ul><li>Jetpack Compose</li><li>Flutter</li><li>Android Views</li></ul>
       </div>
-    </section>
-
-    <section class="section approach-section" id="approach">
-      <div class="section-heading"><div><p class="eyebrow">04 / ENGINEERING APPROACH</p><h2>How I approach problems</h2></div><p class="heading-note">A repeatable process for dependable mobile delivery.</p></div>
-      <div class="steps">
-        <article><span>01</span><h3>Understand</h3><p>Clarify user needs, API contracts, edge cases, and acceptance criteria before implementation.</p></article>
-        <article><span>02</span><h3>Design</h3><p>Choose a suitable architecture, define state and data flows, and keep responsibilities testable.</p></article>
-        <article><span>03</span><h3>Validate</h3><p>Use automated tests, code review, crash diagnostics, and profiling to find regressions early.</p></article>
-        <article><span>04</span><h3>Deliver</h3><p>Automate repeatable checks, support controlled releases, and monitor issues after deployment.</p></article>
+      <div>
+        <h3>Architecture</h3>
+        <ul><li>MVVM</li><li>MVI</li><li>Clean Architecture</li></ul>
       </div>
-    </section>
-
-    <section class="section contact-section" id="contact">
-      <p class="eyebrow">05 / CONTACT</p>
-      <h2>Let's build something useful.</h2>
-      <p>Interested in Senior Android, Flutter, or Mobile Developer opportunities.</p>
-      <div class="contact-actions">
-        <a class="button primary" id="emailLink" href="mailto:">Email me ↗</a>
-        <a class="button secondary" id="linkedinLink" href="#" hidden>LinkedIn ↗</a>
-        <a class="button secondary" id="githubLink" href="#" hidden>GitHub ↗</a>
+      <div>
+        <h3>Android libraries</h3>
+        <ul><li>Hilt</li><li>Dagger 2</li><li>Room</li><li>Retrofit</li></ul>
       </div>
-      <p class="small-note">Before publishing, update your email and optional LinkedIn/GitHub URLs in <code>script.js</code>.</p>
-    </section>
-  </main>
+      <div>
+        <h3>Media and realtime</h3>
+        <ul><li>ExoPlayer / Media3</li><li>FFmpeg</li><li>Agora</li><li>Twilio</li></ul>
+      </div>
+      <div>
+        <h3>Services and tooling</h3>
+        <ul><li>Firebase</li><li>Google Maps</li><li>Payment gateways</li><li>JUnit</li><li>Espresso</li><li>CI/CD</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <footer class="footer"><span>© <span id="year"></span> Tamada Satish Kumar</span><span>Designed for clear, evidence-led engineering stories.</span></footer>
-  <script src="script.js"></script>
+<section id="contact">
+  <div class="wrap contact">
+    <h2 class="title">Contact</h2>
+    <p>I'm open to Android and Flutter roles, remote or hybrid. Send me a note and I'll reply.</p>
+    <div class="links">
+      <!-- TODO: replace the three placeholder links below with your own -->
+      <a class="btn primary" href="mailto:YOUR_EMAIL@example.com">Email me</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/YOUR-LINKEDIN" rel="noopener">LinkedIn</a>
+      <a class="btn ghost" href="https://github.com/YOUR-GITHUB" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">&copy; <span id="yr">2026</span> Satishkumar Tamada. Hyderabad, India.</div>
+</footer>
+
+<script>
+(function(){
+  var projects=[
+    {k:"Pharmacy ordering",t:"SainceTrade",d:"Pharmacies browse and place orders from their phone.",s:"Flutter, Dart"},
+    {k:"Clinical dictation",t:"Doc-U-Scribe",d:"Record and manage medical notes by voice.",s:"Kotlin, Jetpack Compose, MVI"},
+    {k:"Live streaming",t:"Weedeo",d:"Real-time video streaming and playback.",s:"Android, Agora, ExoPlayer"},
+    {k:"Ride-hailing",t:"Prydo",d:"Book a ride and follow the trip on a live map.",s:"Android, Google Maps"}
+  ];
+  var chips=document.querySelectorAll(".chip");
+  function show(i){
+    var p=projects[i];
+    document.getElementById("pk").textContent=p.k;
+    document.getElementById("pt").textContent=p.t;
+    document.getElementById("pd").textContent=p.d;
+    document.getElementById("ps").textContent=p.s;
+    chips.forEach(function(c,n){c.setAttribute("aria-pressed",n===i?"true":"false")});
+  }
+  chips.forEach(function(c){c.addEventListener("click",function(){show(+c.dataset.i)})});
+  show(0);
+  document.getElementById("yr").textContent=new Date().getFullYear();
+})();
+</script>
 </body>
 </html>
