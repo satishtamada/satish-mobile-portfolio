@@ -1,1 +1,1 @@
-Add your resume PDF here as Tamada-Satish-Kumar-Resume.pdf. Then remove this note if desired.
+Place your current resume PDF in this folder and name it Satish-Kumar-Tamada-Resume.pdf. The website's resume download links expect that exact filename.

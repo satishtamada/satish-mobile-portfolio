@@ -1,352 +1,272 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Satish Kumar Tamada | Senior Android & Flutter Developer</title>
-<meta name="description" content="Senior Android and Flutter developer in Hyderabad with 10+ years of experience building production mobile apps in Kotlin, Jetpack Compose and Flutter.">
-<meta property="og:title" content="Satish Kumar Tamada | Senior Android & Flutter Developer">
-<meta property="og:description" content="10+ years building production Android and Flutter apps.">
-<meta property="og:type" content="website">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg:#F2F5F7;
-  --surface:#FFFFFF;
-  --ink:#10202B;
-  --muted:#51626F;
-  --line:#D5DDE3;
-  --blue:#2457F5;
-  --blue-soft:#E3EAFE;
-  --droid:#3DDC84;
-  --screen:#0E1A22;
-  --display:"Bricolage Grotesque",system-ui,sans-serif;
-  --body:"Hanken Grotesk",system-ui,sans-serif;
-}
-@media (prefers-color-scheme:dark){
-  :root{
-    --bg:#0B151C;
-    --surface:#111F29;
-    --ink:#E8EEF2;
-    --muted:#93A4B1;
-    --line:#223341;
-    --blue:#7C9BFF;
-    --blue-soft:#1A2A52;
-    --screen:#060D12;
-  }
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
-a{color:inherit}
-:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:4px}
-.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
-
-/* header */
-header.site{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-header.site .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
-.brand{font-family:var(--display);font-weight:800;text-decoration:none;font-size:18px}
-nav a{margin-left:22px;text-decoration:none;color:var(--muted);font-size:15px;font-weight:500}
-nav a:hover{color:var(--ink)}
-
-/* hero */
-.hero{padding:72px 0 88px}
-.hero .wrap{display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:center}
-.hero h1{font-family:var(--display);font-weight:800;font-size:clamp(44px,7vw,84px);line-height:.98;letter-spacing:-.03em;margin:0 0 24px}
-.hero p.lede{font-size:20px;max-width:34em;color:var(--muted);margin:0 0 32px}
-.hero p.lede strong{color:var(--ink);font-weight:600}
-.btns{display:flex;flex-wrap:wrap;gap:12px}
-.btn{display:inline-block;padding:12px 22px;border-radius:999px;font-weight:600;text-decoration:none;font-size:16px;border:2px solid var(--ink)}
-.btn.primary{background:var(--ink);color:var(--bg)}
-.btn.primary:hover{background:var(--blue);border-color:var(--blue);color:#fff}
-.btn.ghost:hover{background:var(--ink);color:var(--bg)}
-
-/* phone */
-.phone{justify-self:center;width:260px;border-radius:38px;padding:10px;background:var(--ink);box-shadow:0 30px 60px -30px rgba(16,32,43,.5)}
-.screen{background:var(--screen);border-radius:30px;height:470px;padding:18px 16px;color:#E8EEF2;display:flex;flex-direction:column;overflow:hidden}
-.statusbar{display:flex;justify-content:space-between;font-size:11px;opacity:.7;margin-bottom:14px}
-.screen h2{font-family:var(--display);font-size:13px;font-weight:700;margin:0 0 10px;color:var(--droid);letter-spacing:.02em}
-.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
-.chip{font:600 11px var(--body);padding:6px 10px;border-radius:999px;border:1px solid #2C4252;background:transparent;color:#C7D4DD;cursor:pointer}
-.chip[aria-pressed="true"]{background:var(--droid);border-color:var(--droid);color:#06231A}
-.card{background:#16262F;border-radius:18px;padding:16px;flex:1;display:flex;flex-direction:column}
-.card .k{font-size:11px;color:#8FA3B0;margin-bottom:2px}
-.card .t{font-family:var(--display);font-size:22px;font-weight:700;line-height:1.1;margin-bottom:10px}
-.card .d{font-size:13px;line-height:1.5;color:#C7D4DD;margin-bottom:auto}
-.card .s{font-size:11px;color:var(--droid);margin-top:12px}
-.hint{font-size:13px;color:var(--muted);text-align:center;margin-top:14px}
-
-/* sections */
-section{padding:72px 0;border-top:1px solid var(--line)}
-section h2.title{font-family:var(--display);font-weight:800;font-size:clamp(30px,4vw,44px);letter-spacing:-.02em;line-height:1.05;margin:0 0 36px}
-.two{display:grid;grid-template-columns:1fr 1fr;gap:48px}
-.about p{margin:0 0 16px;max-width:36em}
-.facts{list-style:none;padding:0;margin:0}
-.facts li{padding:14px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:16px}
-.facts li span:first-child{color:var(--muted)}
-.facts li span:last-child{font-weight:600;text-align:right}
-
-/* experience timeline */
-.timeline{list-style:none;margin:0;padding:0 0 0 22px;border-left:2px solid var(--line)}
-.timeline li{position:relative;padding:0 0 38px 26px}
-.timeline li:last-child{padding-bottom:0}
-.timeline li::before{content:"";position:absolute;left:-33px;top:9px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:3px solid var(--blue)}
-.timeline .when{font-size:14px;color:var(--muted);font-weight:500}
-.timeline h3{font-family:var(--display);font-size:22px;margin:2px 0 2px;line-height:1.2}
-.timeline .where{color:var(--blue);font-weight:600;margin-bottom:8px}
-.timeline p{margin:0;max-width:44em;color:var(--muted)}
-
-/* projects */
-.projects{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
-.projects li{display:grid;grid-template-columns:200px 1fr 220px;gap:24px;padding:26px 0;border-bottom:1px solid var(--line);align-items:baseline}
-.projects h3{font-family:var(--display);font-size:22px;margin:0;line-height:1.2}
-.projects p{margin:0;color:var(--muted)}
-.projects .stack{font-size:14px;font-weight:600;color:var(--blue)}
-
-/* skills */
-.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:36px 40px}
-.skills h3{font-family:var(--display);font-size:18px;margin:0 0 10px}
-.skills ul{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:8px}
-.skills li{background:var(--blue-soft);color:var(--ink);padding:5px 12px;border-radius:8px;font-size:15px;font-weight:500}
-
-/* contact */
-.contact p{max-width:34em;color:var(--muted);font-size:19px;margin:0 0 28px}
-.links{display:flex;flex-wrap:wrap;gap:12px}
-footer{padding:32px 0 48px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
-
-@media (max-width:860px){
-  .hero .wrap,.two{grid-template-columns:1fr}
-  .hero{padding:48px 0 56px}
-  .projects li{grid-template-columns:1fr;gap:6px}
-  .skills{grid-template-columns:1fr 1fr}
-  nav a{margin-left:14px}
-}
-@media (max-width:520px){
-  .skills{grid-template-columns:1fr}
-  nav a:nth-child(n+4){display:none}
-  .wrap{padding:0 18px}
-}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f9fc">
+  <title>Satish Kumar Tamada | Senior Android & Flutter Developer</title>
+  <meta name="description" content="Senior Android and Flutter developer with 10+ years of experience building mobile applications using Kotlin, Java, Flutter, and modern Android architecture.">
+  <meta property="og:title" content="Satish Kumar Tamada | Senior Android & Flutter Developer">
+  <meta property="og:description" content="10+ years building Android and cross-platform mobile applications.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f7f9fc;
+      --surface: #ffffff;
+      --surface-soft: #f0f4fa;
+      --ink: #17243a;
+      --muted: #5d6b80;
+      --line: #e1e7f0;
+      --accent: #315efb;
+      --accent-dark: #2146d8;
+      --accent-soft: #eaf0ff;
+      --green: #138a62;
+      --shadow: 0 18px 55px rgba(23, 36, 58, .08);
+      --heading: "Manrope", system-ui, sans-serif;
+      --body: "DM Sans", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 92px; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.7 var(--body); -webkit-font-smoothing: antialiased; }
+    a { color: inherit; }
+    a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+    .container { width: min(1120px, calc(100% - 44px)); margin: 0 auto; }
+    .topbar { position: sticky; top: 0; z-index: 10; background: rgba(247,249,252,.88); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(225,231,240,.85); }
+    .nav { height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { text-decoration: none; font: 800 16px/1.2 var(--heading); letter-spacing: -.04em; }
+    .brand-mark { display: inline-grid; place-items: center; width: 34px; height: 34px; margin-right: 9px; border-radius: 11px; background: var(--ink); color: #fff; font-size: 13px; letter-spacing: -.04em; vertical-align: middle; }
+    .nav-links { display: flex; align-items: center; gap: 27px; }
+    .nav-links a { text-decoration: none; color: var(--muted); font-size: 14px; font-weight: 600; transition: color .2s; }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-links .nav-cta { background: var(--accent); color: white; padding: 10px 17px; border-radius: 999px; }
+    .hero { padding: 92px 0 76px; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0,1.2fr) minmax(300px,.8fr); gap: 68px; align-items: center; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; padding: 7px 12px; border: 1px solid #dbe4ff; border-radius: 999px; background: var(--accent-soft); color: #284bd0; font-size: 12px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; }
+    .eyebrow:before { content: ""; width: 7px; height: 7px; background: var(--green); border-radius: 50%; box-shadow: 0 0 0 4px rgba(19,138,98,.12); }
+    h1,h2,h3,p { margin-top: 0; }
+    h1 { margin: 22px 0 22px; max-width: 760px; font: 800 clamp(42px,6vw,70px)/1.08 var(--heading); letter-spacing: -.065em; }
+    h1 .highlight { color: var(--accent); }
+    .hero-copy { max-width: 650px; color: var(--muted); font-size: 19px; line-height: 1.75; margin-bottom: 30px; }
+    .hero-copy strong { color: var(--ink); font-weight: 700; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; gap: 9px; min-height: 48px; padding: 12px 19px; border-radius: 12px; text-decoration: none; font-weight: 700; font-size: 14px; border: 1px solid var(--line); transition: transform .2s, box-shadow .2s, background .2s; }
+    .button:hover { transform: translateY(-2px); box-shadow: 0 10px 22px rgba(23,36,58,.1); }
+    .button.primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+    .button.primary:hover { background: var(--accent-dark); }
+    .button.secondary { background: #fff; color: var(--ink); }
+    .button svg { width: 16px; height: 16px; }
+    .hero-panel { position: relative; padding: 26px; border: 1px solid var(--line); border-radius: 24px; background: var(--surface); box-shadow: var(--shadow); overflow: hidden; }
+    .hero-panel:before { content: ""; position: absolute; width: 190px; height: 190px; top: -105px; right: -70px; border-radius: 50%; background: var(--accent-soft); }
+    .panel-top { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 14px; padding-bottom: 20px; border-bottom: 1px solid var(--line); }
+    .avatar { display: grid; place-items: center; width: 58px; height: 58px; border-radius: 18px; background: linear-gradient(145deg,#315efb,#7a93ff); color: #fff; font: 800 18px var(--heading); letter-spacing: -.05em; }
+    .panel-name { font: 800 17px var(--heading); letter-spacing: -.03em; margin-bottom: 3px; }
+    .panel-role { color: var(--muted); font-size: 13px; }
+    .panel-badge { font-size: 11px; font-weight: 700; color: var(--green); background: #e8f7f0; padding: 7px 9px; border-radius: 999px; white-space: nowrap; }
+    .panel-label { margin: 21px 0 12px; color: var(--muted); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; }
+    .tech-list { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tech-list span { padding: 7px 10px; border-radius: 8px; background: var(--surface-soft); color: #34445c; font-size: 12px; font-weight: 700; }
+    .mini-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 22px; }
+    .mini-stat { background: #f8faff; border: 1px solid var(--line); border-radius: 14px; padding: 15px; }
+    .mini-stat strong { display: block; font: 800 25px/1.2 var(--heading); letter-spacing: -.06em; }
+    .mini-stat span { color: var(--muted); font-size: 12px; }
+    .section { padding: 78px 0; border-top: 1px solid var(--line); }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 30px; margin-bottom: 34px; }
+    .kicker { color: var(--accent); font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: .13em; margin-bottom: 9px; }
+    .section-title { margin: 0; font: 800 clamp(30px,4vw,43px)/1.2 var(--heading); letter-spacing: -.055em; }
+    .section-intro { max-width: 480px; color: var(--muted); margin: 0; font-size: 15px; }
+    .about-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 60px; }
+    .about-copy p { color: var(--muted); margin-bottom: 16px; }
+    .about-copy strong { color: var(--ink); }
+    .principles { display: grid; gap: 12px; }
+    .principle { display: flex; gap: 14px; align-items: flex-start; padding: 16px; border: 1px solid var(--line); border-radius: 15px; background: var(--surface); }
+    .principle-icon { flex: 0 0 38px; display: grid; place-items: center; width: 38px; height: 38px; border-radius: 11px; background: var(--accent-soft); color: var(--accent); font-weight: 800; }
+    .principle strong { display: block; margin: 0 0 3px; font: 700 14px var(--heading); }
+    .principle span { color: var(--muted); font-size: 13px; line-height: 1.5; }
+    .timeline { position: relative; list-style: none; margin: 0; padding: 0; }
+    .timeline:before { content: ""; position: absolute; left: 8px; top: 12px; bottom: 22px; width: 2px; background: var(--line); }
+    .timeline li { position: relative; padding: 0 0 30px 38px; }
+    .timeline li:last-child { padding-bottom: 0; }
+    .timeline li:before { content: ""; position: absolute; left: 0; top: 8px; width: 18px; height: 18px; border: 4px solid var(--bg); border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+    .timeline-top { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px 20px; }
+    .timeline h3 { margin: 0; font: 800 19px var(--heading); letter-spacing: -.03em; }
+    .date { color: var(--muted); font-size: 13px; font-weight: 600; }
+    .company { margin: 3px 0 9px; color: var(--accent); font-weight: 700; font-size: 14px; }
+    .timeline p { max-width: 850px; margin: 0; color: var(--muted); font-size: 15px; }
+    .project-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; }
+    .project-card { display: flex; flex-direction: column; min-height: 220px; padding: 23px; border: 1px solid var(--line); border-radius: 18px; background: var(--surface); transition: transform .2s, box-shadow .2s, border-color .2s; }
+    .project-card:hover { transform: translateY(-3px); border-color: #c8d4ff; box-shadow: var(--shadow); }
+    .project-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 18px; }
+    .project-symbol { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 13px; color: var(--accent); background: var(--accent-soft); font: 800 14px var(--heading); }
+    .project-type { color: var(--muted); font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; text-align: right; }
+    .project-card h3 { margin: 0 0 8px; font: 800 20px var(--heading); letter-spacing: -.04em; }
+    .project-card p { color: var(--muted); font-size: 14px; line-height: 1.65; margin-bottom: 18px; }
+    .stack { display: flex; flex-wrap: wrap; gap: 7px; margin-top: auto; }
+    .stack span { padding: 5px 8px; border-radius: 7px; background: var(--surface-soft); color: #40516a; font-size: 11px; font-weight: 700; }
+    .skills-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 15px; }
+    .skill-group { padding: 21px; border: 1px solid var(--line); border-radius: 16px; background: var(--surface); }
+    .skill-group h3 { margin: 0 0 13px; font: 800 15px var(--heading); letter-spacing: -.02em; }
+    .skill-group .tech-list span { font-size: 12px; }
+    .resume-band { display: flex; align-items: center; justify-content: space-between; gap: 25px; padding: 30px; border-radius: 22px; background: var(--ink); color: #fff; }
+    .resume-band h2 { margin: 0 0 6px; font: 800 25px var(--heading); letter-spacing: -.04em; }
+    .resume-band p { margin: 0; color: #c5d0e0; font-size: 14px; }
+    .resume-band .button { background: #fff; color: var(--ink); border-color: #fff; white-space: nowrap; }
+    .contact-panel { display: grid; grid-template-columns: 1fr auto; gap: 25px; align-items: center; padding: 34px; border: 1px solid #dbe4ff; border-radius: 22px; background: linear-gradient(135deg,#fff 0%,#f0f4ff 100%); }
+    .contact-panel h2 { margin: 0 0 10px; font: 800 clamp(27px,4vw,38px)/1.2 var(--heading); letter-spacing: -.05em; }
+    .contact-panel p { max-width: 620px; margin: 0; color: var(--muted); }
+    .contact-actions { display: flex; flex-direction: column; gap: 10px; }
+    footer { padding: 28px 0 38px; color: var(--muted); font-size: 13px; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 15px; flex-wrap: wrap; }
+    @media (max-width: 850px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 38px; }
+      .hero-panel { max-width: 540px; }
+      .about-grid { grid-template-columns: 1fr; gap: 28px; }
+      .skills-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+      .section-head { align-items: start; flex-direction: column; gap: 12px; }
+    }
+    @media (max-width: 600px) {
+      .container { width: min(100% - 32px, 1120px); }
+      .nav { height: 66px; }
+      .nav-links { gap: 13px; }
+      .nav-links a { font-size: 12px; }
+      .nav-links a:not(.nav-cta) { display: none; }
+      .hero { padding: 62px 0 52px; }
+      h1 { font-size: clamp(39px,12vw,56px); }
+      .hero-copy { font-size: 17px; }
+      .section { padding: 58px 0; }
+      .project-grid,.skills-grid { grid-template-columns: 1fr; }
+      .resume-band,.contact-panel { align-items: flex-start; flex-direction: column; display: flex; padding: 24px; }
+      .contact-actions { flex-direction: row; flex-wrap: wrap; }
+      .mini-stats { gap: 8px; }
+    }
+  </style>
 </head>
 <body>
-
-<header class="site">
-  <div class="wrap">
-    <a class="brand" href="#top">Satish Kumar Tamada</a>
-    <nav aria-label="Primary">
-      <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
-</header>
-
-<main id="top">
-<div class="hero">
-  <div class="wrap">
-    <div>
-      <h1>I build Android and Flutter apps that ship.</h1>
-      <p class="lede">I'm Satish Kumar, a senior mobile developer in Hyderabad with <strong>10+ years</strong> of Android experience across healthcare, e-commerce, live streaming and ride-hailing. I work in Kotlin, Jetpack Compose and Flutter.</p>
-      <div class="btns">
-        <a class="btn primary" href="#projects">See my work</a>
-        <a class="btn ghost" href="#contact">Get in touch</a>
-      </div>
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="#top"><span class="brand-mark">ST</span>Satish Kumar Tamada</a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#about">About</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#skills">Skills</a>
+        <a class="nav-cta" href="#contact">Contact me ↗</a>
+      </nav>
     </div>
-    <div>
-      <div class="phone" aria-label="Interactive phone showing selected projects">
-        <div class="screen">
-          <div class="statusbar"><span>9:41</span><span>5G</span></div>
-          <h2>Projects</h2>
-          <div class="chips" role="group" aria-label="Choose a project">
-            <button class="chip" aria-pressed="true" data-i="0">SainceTrade</button>
-            <button class="chip" aria-pressed="false" data-i="1">Doc-U-Scribe</button>
-            <button class="chip" aria-pressed="false" data-i="2">Weedeo</button>
-            <button class="chip" aria-pressed="false" data-i="3">Prydo</button>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Senior Mobile Developer · 10+ years</div>
+          <h1>Building mobile products with <span class="highlight">purpose and precision.</span></h1>
+          <p class="hero-copy">I'm <strong>Satish Kumar Tamada</strong>, a Senior Android &amp; Flutter Developer focused on building reliable, maintainable mobile applications with Kotlin, Java, Dart, and modern Android architecture.</p>
+          <div class="actions">
+            <a class="button primary" href="#projects">Explore selected projects <span aria-hidden="true">↗</span></a>
+            <a class="button secondary" href="assets/Satish-Kumar-Tamada-Resume.pdf" download>Download resume <span aria-hidden="true">↓</span></a>
           </div>
-          <div class="card" aria-live="polite">
-            <div class="k" id="pk"></div>
-            <div class="t" id="pt"></div>
-            <div class="d" id="pd"></div>
-            <div class="s" id="ps"></div>
+        </div>
+        <aside class="hero-panel" aria-label="Professional profile overview">
+          <div class="panel-top">
+            <div style="display:flex;align-items:center;gap:14px">
+              <div class="avatar" aria-hidden="true">ST</div>
+              <div><div class="panel-name">Satish Kumar Tamada</div><div class="panel-role">Android · Kotlin · Flutter</div></div>
+            </div>
+            <span class="panel-badge">10+ years</span>
+          </div>
+          <div class="panel-label">Core toolkit</div>
+          <div class="tech-list"><span>Kotlin</span><span>Java</span><span>Flutter</span><span>Dart</span><span>Jetpack Compose</span><span>Coroutines</span></div>
+          <div class="panel-label">Engineering focus</div>
+          <div class="tech-list"><span>Clean Architecture</span><span>MVVM / MVI</span><span>API integration</span><span>Performance</span><span>Testing</span></div>
+          <div class="mini-stats">
+            <div class="mini-stat"><strong>Native</strong><span>Android engineering</span></div>
+            <div class="mini-stat"><strong>Cross-platform</strong><span>Flutter development</span></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-head"><div><div class="kicker">Profile</div><h2 class="section-title">Engineering with the full product in mind.</h2></div><p class="section-intro">From architecture and integrations to debugging and delivery, I focus on building mobile software that is practical to maintain and dependable in production.</p></div>
+        <div class="about-grid">
+          <div class="about-copy">
+            <p>Across more than a decade in mobile development, I've worked on <strong>healthcare, pharmacy ordering, enterprise applications, live streaming, e-commerce, and ride-hailing</strong> products.</p>
+            <p>My work spans native Android development with Kotlin and Java, as well as cross-platform delivery with Flutter. I value clear architecture, thoughtful implementation, testability, and close collaboration with product and engineering teams.</p>
+            <p>I enjoy solving problems where app performance, reliable integrations, and a consistent user experience matter.</p>
+          </div>
+          <div class="principles">
+            <div class="principle"><div class="principle-icon">01</div><div><strong>Architecture &amp; maintainability</strong><span>MVVM, MVI, Clean Architecture, modular thinking, and reusable components.</span></div></div>
+            <div class="principle"><div class="principle-icon">02</div><div><strong>Reliable integrations</strong><span>REST APIs, authentication, Firebase, payment gateways, maps, and media SDKs.</span></div></div>
+            <div class="principle"><div class="principle-icon">03</div><div><strong>Quality &amp; delivery</strong><span>Debugging, crash analysis, testing, code reviews, and collaborative Agile delivery.</span></div></div>
           </div>
         </div>
       </div>
-      <p class="hint">Tap a project</p>
-    </div>
-  </div>
-</div>
+    </section>
 
-<section id="about">
-  <div class="wrap two">
-    <div>
-      <h2 class="title">About</h2>
-      <div class="about">
-        <p>I've spent over a decade turning product ideas into Android apps that people use every day: pharmacy ordering, clinical dictation, electronic medical records, live video and on-demand rides.</p>
-        <p>I care about clean architecture (MVVM, MVI, Clean), apps that are easy to test, and release pipelines that don't surprise anyone. I'm equally comfortable in native Kotlin with Jetpack Compose and in Flutter when one codebase makes more sense.</p>
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section-head"><div><div class="kicker">Career</div><h2 class="section-title">Professional experience</h2></div><p class="section-intro">A progression through mobile engineering roles spanning product development and enterprise applications.</p></div>
+        <ol class="timeline">
+          <li><div class="timeline-top"><h3>Senior Android / Flutter Developer</h3><span class="date">Jun 2021 – Aug 2026</span></div><div class="company">Saince Software Pvt. Ltd. · Hyderabad, India</div><p>Developed and maintained native Android and Flutter applications across healthcare and pharmacy workflows. Worked with Kotlin, Java, Flutter, REST APIs, authentication, payment integrations, Firebase, third-party SDKs, rendering and background-processing improvements, and production issue resolution.</p></li>
+          <li><div class="timeline-top"><h3>Senior Android Developer</h3><span class="date">Mar 2019 – Jun 2021</span></div><div class="company">Byteridge Software Services Pvt. Ltd. · Hyderabad, India</div><p>Led end-to-end Android feature development for enterprise applications, using Dagger 2, Room, Firebase Analytics, Crashlytics, push notifications, and backend integrations. Participated in code reviews and mentored junior developers; contributed to the Microsoft Blentnet project.</p></li>
+          <li><div class="timeline-top"><h3>Android Developer</h3><span class="date">Mar 2018 – Mar 2019</span></div><div class="company">LSN Software Services Pvt. Ltd. · Hyderabad, India</div><p>Developed a native Android application using Java for local Wi-Fi communication and project workflows, including discovery, browsing, retrieval, downloading, and ordering across a connected local network.</p></li>
+          <li><div class="timeline-top"><h3>Android Developer</h3><span class="date">Feb 2016 – Mar 2018</span></div><div class="company">InventBird Pvt. Ltd. · Hyderabad, India</div><p>Built native Android cab-booking features using Java, Google Maps, and location services. Implemented Firebase push notifications for booking confirmations, ride-status updates, and driver/customer communication.</p></li>
+        </ol>
       </div>
-    </div>
-    <div>
-      <ul class="facts" style="margin-top:8px">
-        <li><span>Role</span><span>Senior Android / Flutter Developer</span></li>
-        <li><span>Experience</span><span>10+ years</span></li>
-        <li><span>Location</span><span>Hyderabad, India</span></li>
-        <li><span>Education</span><span>MCA, Pydah College of Engineering and Technology</span></li>
-      </ul>
-    </div>
-  </div>
-</section>
+    </section>
 
-<section id="experience">
-  <div class="wrap">
-    <h2 class="title">Experience</h2>
-    <ol class="timeline">
-      <li>
-        <div class="when">Jun 2021 – Aug 2026</div>
-        <h3>Senior Android / Flutter Developer</h3>
-        <div class="where">Saince Software</div>
-        <p>Built and maintained mobile apps in Flutter and native Android, including SainceTrade for pharmacy ordering and Doc-U-Scribe for clinical dictation using Jetpack Compose and MVI.</p>
-      </li>
-      <li>
-        <div class="when">Mar 2019 – Jun 2021</div>
-        <h3>Senior Android Developer</h3>
-        <div class="where">Byteridge Software</div>
-        <p>Developed Android applications for enterprise clients, including work on the Microsoft Blentnet project.</p>
-      </li>
-      <li>
-        <div class="when">Mar 2018 – Mar 2019</div>
-        <h3>Android Developer</h3>
-        <div class="where">LSN Software</div>
-        <p>Delivered Android apps for client projects.</p>
-      </li>
-      <li>
-        <div class="when">Feb 2016 – Mar 2018</div>
-        <h3>Android Developer</h3>
-        <div class="where">InventBird</div>
-        <p>Built Android apps from design through release.</p>
-      </li>
-    </ol>
-  </div>
-</section>
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-head"><div><div class="kicker">Selected work</div><h2 class="section-title">Projects &amp; product experience</h2></div><p class="section-intro">A selection of products and technical areas I've worked on. Descriptions focus on known functionality and technologies.</p></div>
+        <div class="project-grid">
+          <article class="project-card"><div class="project-top"><div class="project-symbol">ST</div><div class="project-type">Pharmacy · Ordering</div></div><h3>SainceTrade</h3><p>Pharmacy ordering platform supporting medicine search, inventory-aware cart management, OTP authentication, and ordering workflows.</p><div class="stack"><span>Flutter</span><span>Dart</span><span>Clean Architecture</span><span>SQL</span></div></article>
+          <article class="project-card"><div class="project-top"><div class="project-symbol">DS</div><div class="project-type">Healthcare · Dictation</div></div><h3>Doc-U-Scribe</h3><p>Clinical documentation workflows with speech dictation and data-protection considerations for medical notes.</p><div class="stack"><span>Flutter</span><span>State Management</span><span>SQL</span><span>Encryption</span></div></article>
+          <article class="project-card"><div class="project-top"><div class="project-symbol">QR</div><div class="project-type">Healthcare · EMR</div></div><h3>Qural</h3><p>Electronic Medical Records solution with QR-code patient lookup, Firebase, and REST API integrations.</p><div class="stack"><span>Kotlin</span><span>Android</span><span>MVVM</span><span>Firebase</span></div></article>
+          <article class="project-card"><div class="project-top"><div class="project-symbol">WV</div><div class="project-type">Media · Streaming</div></div><h3>Weedeo</h3><p>Live-streaming capabilities involving real-time video integration and media processing.</p><div class="stack"><span>Android</span><span>Agora SDK</span><span>FFmpeg</span></div></article>
+          <article class="project-card"><div class="project-top"><div class="project-symbol">PR</div><div class="project-type">Mobility · Maps</div></div><h3>Prydo Rider &amp; Driver</h3><p>Ride-hailing features including map-based trip flows, payments, calling, and multilingual support.</p><div class="stack"><span>Android</span><span>Google Maps</span><span>Payments</span></div></article>
+          <article class="project-card"><div class="project-top"><div class="project-symbol">UR</div><div class="project-type">Cross-platform</div></div><h3>U-ROCK</h3><p>Cross-platform application work using shared Flutter components across mobile and desktop platforms.</p><div class="stack"><span>Flutter</span><span>Dart</span><span>Android</span><span>iOS</span><span>Windows</span></div></article>
+          <article class="project-card"><div class="project-top"><div class="project-symbol">SS</div><div class="project-type">E-commerce</div></div><h3>Smiley Serve</h3><p>Subscription-based e-commerce application with Google services integration.</p><div class="stack"><span>Android</span><span>Google Services</span></div></article>
+          <article class="project-card"><div class="project-top"><div class="project-symbol">BP</div><div class="project-type">Enterprise · Local network</div></div><h3>Blizdpad</h3><p>Native Android workflows for discovering, browsing, retrieving, downloading, and ordering project information over local Wi-Fi.</p><div class="stack"><span>Java</span><span>Android SDK</span><span>Wi-Fi</span></div></article>
+        </div>
+      </div>
+    </section>
 
-<section id="projects">
-  <div class="wrap">
-    <h2 class="title">Projects</h2>
-    <ul class="projects">
-      <li>
-        <h3>SainceTrade</h3>
-        <p>Pharmacy ordering app that lets pharmacies browse and place orders from their phone.</p>
-        <div class="stack">Flutter, Dart</div>
-      </li>
-      <li>
-        <h3>Doc-U-Scribe</h3>
-        <p>Clinical dictation app for recording and managing medical notes.</p>
-        <div class="stack">Kotlin, Jetpack Compose, MVI</div>
-      </li>
-      <li>
-        <h3>Qural</h3>
-        <p>Electronic medical records (EMR) app for accessing patient information.</p>
-        <div class="stack">Android, Kotlin</div>
-      </li>
-      <li>
-        <h3>Weedeo</h3>
-        <p>Live streaming app with real-time video.</p>
-        <div class="stack">Android, Agora, ExoPlayer</div>
-      </li>
-      <li>
-        <h3>Prydo</h3>
-        <p>Ride-hailing app with live maps and trip tracking.</p>
-        <div class="stack">Android, Google Maps</div>
-      </li>
-      <li>
-        <h3>U-ROCK</h3>
-        <p>Cross-platform app built from a single codebase for Android, iOS And Windows.</p>
-        <div class="stack">Flutter, Dart</div>
-      </li>
-      <li>
-        <h3>Smiley Serve</h3>
-        <p>E-commerce app with catalog, cart and online payments.</p>
-        <div class="stack">Android, payment gateways</div>
-      </li>
-    </ul>
-  </div>
-</section>
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-head"><div><div class="kicker">Capabilities</div><h2 class="section-title">Technical toolkit</h2></div><p class="section-intro">Core technologies and practices used across native Android and cross-platform mobile projects.</p></div>
+        <div class="skills-grid">
+          <div class="skill-group"><h3>Languages</h3><div class="tech-list"><span>Kotlin</span><span>Java</span><span>Dart</span></div></div>
+          <div class="skill-group"><h3>Mobile UI</h3><div class="tech-list"><span>Android SDK</span><span>Jetpack Compose</span><span>Flutter</span><span>Material Design</span></div></div>
+          <div class="skill-group"><h3>Architecture</h3><div class="tech-list"><span>MVVM</span><span>MVI</span><span>Clean Architecture</span><span>MVC</span></div></div>
+          <div class="skill-group"><h3>Android libraries</h3><div class="tech-list"><span>Coroutines</span><span>Flow</span><span>WorkManager</span><span>Hilt / Dagger 2</span><span>Room</span><span>Retrofit</span><span>RxJava</span></div></div>
+          <div class="skill-group"><h3>Integrations &amp; media</h3><div class="tech-list"><span>REST APIs</span><span>Firebase</span><span>Google Maps</span><span>Agora</span><span>Twilio</span><span>FFmpeg</span><span>ExoPlayer / Media3</span></div></div>
+          <div class="skill-group"><h3>Quality &amp; tooling</h3><div class="tech-list"><span>JUnit</span><span>Espresso</span><span>Crashlytics</span><span>Git</span><span>CI/CD</span><span>Android Studio</span><span>JIRA</span></div></div>
+        </div>
+      </div>
+    </section>
 
-<section id="skills">
-  <div class="wrap">
-    <h2 class="title">Skills</h2>
-    <div class="skills">
-      <div>
-        <h3>Languages</h3>
-        <ul><li>Kotlin</li><li>Java</li><li>Dart</li></ul>
+    <section class="section" id="resume">
+      <div class="container">
+        <div class="resume-band">
+          <div><h2>Want the details in one place?</h2><p>Download my resume for a concise overview of my experience, skills, and project background.</p></div>
+          <a class="button" href="assets/Satish-Kumar-Tamada-Resume.pdf" download>Download resume ↓</a>
+        </div>
       </div>
-      <div>
-        <h3>UI</h3>
-        <ul><li>Jetpack Compose</li><li>Flutter</li><li>Android Views</li></ul>
-      </div>
-      <div>
-        <h3>Architecture</h3>
-        <ul><li>MVVM</li><li>MVI</li><li>Clean Architecture</li></ul>
-      </div>
-      <div>
-        <h3>Android libraries</h3>
-        <ul><li>Hilt</li><li>Dagger 2</li><li>Room</li><li>Retrofit</li></ul>
-      </div>
-      <div>
-        <h3>Media and realtime</h3>
-        <ul><li>ExoPlayer / Media3</li><li>FFmpeg</li><li>Agora</li><li>Twilio</li></ul>
-      </div>
-      <div>
-        <h3>Services and tooling</h3>
-        <ul><li>Firebase</li><li>Google Maps</li><li>Payment gateways</li><li>JUnit</li><li>Espresso</li><li>CI/CD</li></ul>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<section id="contact">
-  <div class="wrap contact">
-    <h2 class="title">Contact</h2>
-    <p>I'm open to Android and Flutter roles, remote or hybrid. Send me a note and I'll reply.</p>
-    <div class="links">
-      <!-- TODO: replace the three placeholder links below with your own -->
-      <a class="btn primary" href="mailto:YOUR_EMAIL@example.com">Email me</a>
-      <a class="btn ghost" href="https://www.linkedin.com/in/YOUR-LINKEDIN" rel="noopener">LinkedIn</a>
-      <a class="btn ghost" href="https://github.com/YOUR-GITHUB" rel="noopener">GitHub</a>
-    </div>
-  </div>
-</section>
-</main>
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact-panel">
+          <div><div class="kicker">Get in touch</div><h2>Let's build something useful.</h2><p>I'm open to suitable Senior Android and Senior Android / Flutter opportunities. Reach out by email to discuss a role or collaboration.</p></div>
+          <div class="contact-actions"><a class="button primary" href="mailto:tamadasatish@gmail.com">Email Satish ↗</a><a class="button secondary" href="#top">Back to top ↑</a></div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-<footer>
-  <div class="wrap">&copy; <span id="yr">2026</span> Satishkumar Tamada. Hyderabad, India.</div>
-</footer>
-
-<script>
-(function(){
-  var projects=[
-    {k:"Pharmacy ordering",t:"SainceTrade",d:"Pharmacies browse and place orders from their phone.",s:"Flutter, Dart"},
-    {k:"Clinical dictation",t:"Doc-U-Scribe",d:"Record and manage medical notes by voice.",s:"Kotlin, Jetpack Compose, MVI"},
-    {k:"Live streaming",t:"Weedeo",d:"Real-time video streaming and playback.",s:"Android, Agora, ExoPlayer"},
-    {k:"Ride-hailing",t:"Prydo",d:"Book a ride and follow the trip on a live map.",s:"Android, Google Maps"}
-  ];
-  var chips=document.querySelectorAll(".chip");
-  function show(i){
-    var p=projects[i];
-    document.getElementById("pk").textContent=p.k;
-    document.getElementById("pt").textContent=p.t;
-    document.getElementById("pd").textContent=p.d;
-    document.getElementById("ps").textContent=p.s;
-    chips.forEach(function(c,n){c.setAttribute("aria-pressed",n===i?"true":"false")});
-  }
-  chips.forEach(function(c){c.addEventListener("click",function(){show(+c.dataset.i)})});
-  show(0);
-  document.getElementById("yr").textContent=new Date().getFullYear();
-})();
-</script>
+  <footer><div class="container footer-inner"><span>© <span id="year">2026</span> Satish Kumar Tamada</span><span>Senior Android &amp; Flutter Developer · India</span></div></footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>
